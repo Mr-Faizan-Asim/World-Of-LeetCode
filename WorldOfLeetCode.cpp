@@ -49,3 +49,25 @@ public:
         return result;
     }
 };
+// 1233
+void Find(string name)
+{
+	dos->SetPresentFolder();
+	int x = 0;
+	for (const auto& fold : dos->PresentFolder->FoldersInFolders)
+	{
+		if (fold->Name.substr(0, name.length()) == name)
+		{
+			cout << x + 1 << fold->Name;
+			x++;
+		}		
+	}
+	for (const auto& fold : dos->PresentFolder->FilesInFolder)
+	{
+		if (fold->Name.substr(0, name.length()) == name)
+		{
+			cout << x + 1 << fold->Name;
+			x++;
+		}
+	}
+}
